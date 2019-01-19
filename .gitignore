@@ -101,5 +101,4 @@ ENV/
 .mypy_cache/
 
 # Others
-*.mdj
 .DS_Store
