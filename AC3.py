@@ -26,7 +26,7 @@ def remove_inconsistent_values(csp, Xt, Xh, removals):
     # If Xt=x conflicts with Xh=y for every possible y, eliminate Xt=x
     for x in csp.domains[Xt].copy():
         for y in csp.domains[Xh]:
-            if not csp.conflicts(Xt, x, Xh, y):
+            if not csp.conflicts(*Xt, x, *Xh, y):
                 break
         else:
             csp.domains[Xt].remove(x)

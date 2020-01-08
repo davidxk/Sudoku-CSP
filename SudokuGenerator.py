@@ -17,7 +17,7 @@ class SudokuGenerator:
             i, j = randrange(9), randrange(9)
             while board[i][j] != '.':
                 i, j = randrange(9), randrange(9)
-            k = i / 3 * 3 + j / 3
+            k = i // 3 * 3 + j // 3
 
             intersect = horizontal[i] & vertical[j] & regional[k]
             if not intersect:

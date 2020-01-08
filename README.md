@@ -24,14 +24,14 @@ def solveSudoku(self, board):
 To test these algorithms, run command
 
 ```shell
-$ python TestSudokuSolver.py
+$ python3 TestSudokuSolver.py
 ```
 
 ## Generate Random Sudoku Grid
 Generate random filled Sudoku grid with the following command:
 
 ```shell
-$ python SudokuGenerator.py
+$ python3 SudokuGenerator.py
 ```
 
 Sudoku puzzles creation is a problem in the Mathematical Contest in Modeling(MCM) in 2008. Generate random filled Sudoku grid can be considered as the first step in this problem. My algorithm using the following strategy:
@@ -49,5 +49,5 @@ Put sudoku problems in file `input.txt` in the given format, where the first lin
 Run command
 
 ```shell
-$ python SolveSudoku.py
+$ python3 SolveSudoku.py
 ```

@@ -4,12 +4,12 @@ from sys import stdout
 class TestSudokuSolver:
     def stressTest(self, sol, name):
         with open("stress_test.txt", "r") as fd:
-            cases = map(eval, fd.read().splitlines())
+            cases = list(map(eval, fd.read().splitlines()))
         self.testSolver(sol, name, cases)
 
     def generalTest(self, sol, name):
         with open("general_test.txt", "r") as fd:
-            cases = map(eval, fd.read().splitlines())
+            cases = list(map(eval, fd.read().splitlines()))
         self.testSolver(sol, name, cases)
 
     def testSolver(self, sol, name, cases):
@@ -19,10 +19,10 @@ class TestSudokuSolver:
             stdout.flush()
             sol.solveSudoku(case)
             if not self.checkSolution(case):
-                print "Case %d failed\n" % i + self.printBoard(case)
+                print("Case %d failed\n" % i + self.printBoard(case))
                 assert False
         stdout.write("\r                    \r")
-        print "- %-12s\tRunning time: %f" % (name, time() - start)
+        print("- %-12s\tRunning time: %f" % (name, time() - start))
 
     def checkSolution(self, board):
         nums = set("123456789")
@@ -33,7 +33,7 @@ class TestSudokuSolver:
             for j in range(9):
                 if board[i][j] not in nums:
                     return False
-                k = i / 3 * 3 + j / 3
+                k = i // 3 * 3 + j // 3
                 num = int(board[i][j]) - 1
                 if num in heng[i] or num in zong[j] or num in gezi[k]:
                     return False
@@ -57,9 +57,9 @@ if __name__ == "__main__":
             AC3LCVSudokuSolver(), AC3MRVSudokuSolver(), AC3MRVLCVSudokuSolver()]
     names = ["Backtrack", "Backtrack AC3", "AC3 LCV", "AC3 MRV",
             "AC3 MRV LCV"]
-    print "General test"
+    print("General test")
     for i in range(len(solvers)):
         test.generalTest(solvers[i], names[i])
-    print "\nStress test"
+    print("\nStress test")
     for i in range(3, len(solvers)):
         test.stressTest(solvers[i], names[i])

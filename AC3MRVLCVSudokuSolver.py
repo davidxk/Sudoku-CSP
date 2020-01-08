@@ -14,7 +14,7 @@ class AC3MRVLCVSudokuSolver(AC3SudokuSolver):
 
     def popMin(self, array, key):
         minimum, idx = float("inf"), 0
-        for i in xrange(len(array)):
+        for i in range(len(array)):
             if key(array[i]) < minimum:
                 idx = i
                 minimum = key(array[i])

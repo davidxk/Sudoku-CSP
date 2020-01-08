@@ -30,7 +30,7 @@ class AC3MRVSudokuSolver(AC3SudokuSolver):
 
     def popMinRandom(self, array, key):
         minimum, indices = float("inf"), []
-        for i in xrange(len(array)):
+        for i in range(len(array)):
             if key(array[i]) < minimum:
                 indices = [i]
                 minimum = key(array[i])
@@ -42,7 +42,7 @@ class AC3MRVSudokuSolver(AC3SudokuSolver):
 
     def popMin(self, array, key):
         minimum, idx = float("inf"), 0
-        for i in xrange(len(array)):
+        for i in range(len(array)):
             if key(array[i]) < minimum:
                 idx = i
                 minimum = key(array[i])

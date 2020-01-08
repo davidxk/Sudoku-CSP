@@ -13,7 +13,7 @@ class BacktrackSudokuSolver(SudokuSolver):
         for i in range(9):
             for j in range(9):
                 if board[i][j] != '.':
-                    k = i / 3 * 3 + j / 3
+                    k = i // 3 * 3 + j // 3
                     num = ord(board[i][j]) - ord('0') - 1
                     heng[i].add(num); zong[j].add(num); gezi[k].add(num)
                 else:
@@ -23,7 +23,7 @@ class BacktrackSudokuSolver(SudokuSolver):
             if start >= len(blank):
                 return True
             i, j = blank[start]
-            k = i / 3 * 3 + j / 3
+            k = i // 3 * 3 + j // 3
             for num in range(9):
                 if num not in heng[i] and num not in zong[j] and\
                         num not in gezi[k]:

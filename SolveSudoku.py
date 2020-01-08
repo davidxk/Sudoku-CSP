@@ -14,5 +14,5 @@ sol = AC3MRVLCVSudokuSolver()
 test = TestSudokuSolver()
 for board in cases:
     sol.solveSudoku(board)
-    print test.printBoard(board)
-    print
+    print(test.printBoard(board))
+    print()

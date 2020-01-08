@@ -2,14 +2,14 @@ from collections import defaultdict
 from SudokuCSP import SudokuCSP
 
 class SudokuSolver(object):
-    def __addEdge__(self, (i, j), adjList):
-        k = i / 3 * 3 + j / 3
+    def __addEdge__(self, i, j, adjList):
+        k = i // 3 * 3 + j // 3
         for num in range(9):
             if num != i:
                 adjList[(i, j)].add((num, j))
             if num != j:
                 adjList[(i, j)].add((i, num))
-            row = num/3 + k/3 * 3
+            row = num//3 + k//3 * 3
             col = num%3 + k%3 * 3
             if row != i or col != j:
                 adjList[(i, j)].add((row, col))
@@ -19,7 +19,7 @@ class SudokuSolver(object):
         # Build graph (contraints)
         for i in range(9):
             for j in range(9):
-                self.__addEdge__((i, j), adjList)
+                self.__addEdge__(i, j, adjList)
         # Set domains
         variables = []
         assigned = []
