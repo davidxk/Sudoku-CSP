@@ -40,9 +40,9 @@ if __name__ == "__main__":
     while cnt < 6:
         board, solution = gen.generateSudoku()
         if board:
-            print "Problem %d" % cnt
-            print "\n".join(map(" ".join, board))
-            print "Solution %d" % cnt
-            print "\n".join(map(" ".join, solution))
+            print(f"Problem {cnt}")
+            print("\n".join(map(" ".join, board)))
+            print(f"Solution {cnt}")
+            print("\n".join(map(" ".join, solution)))
             print
             cnt += 1

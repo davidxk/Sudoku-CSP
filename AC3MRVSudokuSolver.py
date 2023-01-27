@@ -25,7 +25,7 @@ class AC3MRVSudokuSolver(AC3SudokuSolver):
         for i in range(9):
             for j in range(9):
                 if board[i][j] == '.':
-                    assert len(csp.domains[(i, j)]) is 1
+                    assert len(csp.domains[(i, j)]) == 1
                     board[i][j] = str( csp.domains[(i, j)].pop() + 1 )
 
     def popMinRandom(self, array, key):
